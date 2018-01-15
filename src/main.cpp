@@ -32,7 +32,7 @@ void setup()
 //Serial.begin(9600);
 
 
-TCCR2B = TCCR2B & B11111000 | B00000110;
+TCCR2B = (TCCR2B & B11111000) | (B00000110);
 lcd.init();                      // initialize the lcd
 lcd.backlight();
  //sensor.begin();
