@@ -36,7 +36,7 @@ TCCR2B = TCCR2B & B11111000 | B00000110;
 lcd.init();                      // initialize the lcd
 lcd.backlight();
  //sensor.begin();
-
+//test
   dht2.begin();
 
   // initialize LED digital pin as an output.
