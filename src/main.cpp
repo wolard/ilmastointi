@@ -8,9 +8,9 @@
 #include "DHT.h"
 
 #include <LiquidCrystal_I2C.h>
-#include "Si7021.h"
+//#include "Si7021.h"
 
-Si7021 si7021;
+//Si7021 si7021;
 
 //#include "Adafruit_Si7021.h"
 //LiquidCrystal_I2C lcd(0x27, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE);
@@ -23,10 +23,10 @@ int fanvalue=10;
 
 
 #define DHTPIN2 3  // what pin we're connected to
-#define DHTTYPE DHT11   // DHT 22  (AM2302)
-
+#define DHTTYPE DHT22   // DHT 22  (AM2302)
+#define DHTPIN1 2 
+DHT dht1(DHTPIN1, DHTTYPE);
 DHT dht2(DHTPIN2, DHTTYPE);
-
 void setup()
 {
 //Serial.begin(9600);
@@ -50,11 +50,13 @@ void loop()
   delay(200);
    //Start at character 4 on line 0
 
-  // Reading temperature or humidity takes about 250 milliseconds!
-  // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
-  float hud1 = (si7021.measureHumidity());
+  //sisälämpötila
+  //float hud1 = (si7021.measureHumidity());
+  float hud1 = dht1.readHumidity();
   float h = hud1/100;
-  float temp1 = (si7021.getTemperatureFromPreviousHumidityMeasurement());
+  
+  //float temp1 = (si7021.getTemperatureFromPreviousHumidityMeasurement());
+   float temp1 = dht1.readTemperature();
     float t= temp1+273.15;
   // Read temperature as Celsius
 
