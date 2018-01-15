@@ -8,7 +8,7 @@
 #include "DHT.h"
 
 #include <LiquidCrystal_I2C.h>
-#include "Si7021.h"
+//#include "Si7021.h"
 
 //Si7021 si7021;
 
