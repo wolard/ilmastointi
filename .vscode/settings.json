@@ -1,5 +1,8 @@
 {
     "terminal.integrated.env.linux": {
         "PATH": "/home/wolard/.platformio/penv/bin:/home/wolard/bin:/home/wolard/.local/bin:/home/wolard/bin:/home/wolard/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+    },
+    "terminal.integrated.env.windows": {
+        "PATH": "C:\\Users\\t\\.platformio\\penv\\Scripts;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Users\\t\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\t\\AppData\\Local\\atom\\bin;C:\\Users\\t\\AppData\\Roaming\\npm;C:\\Program Files\\Microsoft VS Code\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Users\\t\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\t\\AppData\\Local\\atom\\bin;C:\\Users\\t\\AppData\\Roaming\\npm;C:\\Program Files\\Microsoft VS Code\\bin"
     }
 }
