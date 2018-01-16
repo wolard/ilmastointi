@@ -32,11 +32,15 @@ void setup()
 //Serial.begin(9600);
 
 
+<<<<<<< HEAD
 TCCR2B = (TCCR2B & B11111000)|(B00000110);
+=======
+TCCR2B = (TCCR2B & B11111000) | (B00000110);
+>>>>>>> f3e0ed1fe08bc2060e43563536ccac7522d4dcbc
 lcd.init();                      // initialize the lcd
 lcd.backlight();
  //sensor.begin();
-
+//test
   dht2.begin();
 
   // initialize LED digital pin as an output.
@@ -48,7 +52,7 @@ void loop()
 {
 
   delay(200);
-   //Start at character 4 on line 0
+  
 
   //sisälämpötila
   //float hud1 = (si7021.measureHumidity());
