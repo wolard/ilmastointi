@@ -89,7 +89,7 @@ lcd.print("tuuletin:");
 int fanpower = map(fanvalue, 0, 255, 0, 100);
 lcd.print(String(fanpower)+String("%   "));
 //lcd.print("%");
-if ((hum-hum2>1.5)&&(fanvalue<255))
+if ((hum-hum2>1)&&(fanvalue<255))
 {
 fanvalue++;
 analogWrite(11, fanvalue);
