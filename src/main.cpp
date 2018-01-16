@@ -32,7 +32,7 @@ void setup()
 //Serial.begin(9600);
 
 
-TCCR2B = TCCR2B & B11111000 | B00000110;
+TCCR2B = (TCCR2B & B11111000)|(B00000110);
 lcd.init();                      // initialize the lcd
 lcd.backlight();
  //sensor.begin();
@@ -89,8 +89,8 @@ lcd.print("tuuletin:");
   // turn the LED off by making the voltage LOW
 
 int fanpower = map(fanvalue, 0, 255, 0, 100);
-lcd.print(fanpower);
-lcd.print("%");
+lcd.print(String(fanpower)+String("%"));
+//lcd.print("%");
 if ((hum-hum2>1.5)&&(fanvalue<255))
 {
 fanvalue++;
