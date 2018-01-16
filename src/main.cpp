@@ -48,8 +48,6 @@ void loop()
 {
 
   delay(200);
-   //Start at character 4 on line 0
-
   //sisälämpötila
   //float hud1 = (si7021.measureHumidity());
   float hud1 = dht1.readHumidity();
