@@ -8,6 +8,7 @@
 #include "DHT.h"
 
 #include <LiquidCrystal_I2C.h>
+#include <Adafruit_BME280.h>
 //#include "Si7021.h"
 
 //Si7021 si7021;
@@ -25,8 +26,10 @@ int fanvalue=10;
 #define DHTPIN2 3  // what pin we're connected to
 #define DHTTYPE DHT22   // DHT 22  (AM2302)
 #define DHTPIN1 2 
-DHT dht1(DHTPIN1, DHTTYPE);
-DHT dht2(DHTPIN2, DHTTYPE);
+//DHT dht1(DHTPIN1, DHTTYPE);
+//DHT dht2(DHTPIN2, DHTTYPE);
+Adafruit_BME280 bme1;
+Adafruit_BME280 bme1;
 void setup()
 {
 //Serial.begin(9600);
@@ -37,11 +40,17 @@ lcd.init();                      // initialize the lcd
 lcd.backlight();
  //sensor.begin();
 
-  dht2.begin();
+  //dht2.begin();
 
   // initialize LED digital pin as an output.
   pinMode(11, OUTPUT);
   analogWrite(11, fanvalue);
+bool status;
+  status = bme1.begin(0x76, &Wire);  
+    if (!status) {
+        Serial.println("Could not find a valid BME280 sensor, check wiring!");
+        while (1);
+    }
 }
 
 void loop()
@@ -50,16 +59,18 @@ void loop()
   delay(200);
   //sisälämpötila
   //float hud1 = (si7021.measureHumidity());
-  float hud1 = dht1.readHumidity();
+  //float hud1 = dht1.readHumidity();
+  float hud1 = bme1.readHumidity();
   float h = hud1/100;
   
   //float temp1 = (si7021.getTemperatureFromPreviousHumidityMeasurement());
-   float temp1 = dht1.readTemperature();
+  // float temp1 = dht1.readTemperature();
+  float temp1 = bme1.readTemperature();
     float t= temp1+273.15;
   // Read temperature as Celsius
 
 delay(300);
-  float hud2 = dht2.readHumidity();
+  //float hud2 = dht2.readHumidity();
   float h2 = hud2/100;
 
   float temp2 = dht2.readTemperature();
